@@ -7,20 +7,13 @@ float ptX5, ptY5, ptX6, ptY6, ptX7, ptY7, ptX8, ptY8; //Notice of the patterns o
 float ptX9, ptY9, ptX10, ptY10, ptX11, ptY11, ptX12, ptY12;
 float ptX13, ptY13, ptX14, ptY14, ptX15, ptY15, ptX16, ptY16;
 
-
-int appWidth, appHeight, largerDimension, smallerDimension;
-Boolean OS_On=false, splashScreenStart=false;
-Boolean nightMode=false; //Bonus #1: populate with sytem clock
-//Ultimate Bonus, Gr 11: use API-sunrise for system clock start, API-sunset for system clock end
-//Hint: https://processing.org/reference/hour_.html
-color resetDefaultInk=#FFFFFF, white=#FFFFFF, purple=#FF00FF;
-
+float  appWidth,appHeight;
 
 
 //
 void setup()
 {
-  size(900, 680); //fullScreen(); //displayWidth, displayHeight
+  size(900, 550); //fullScreen(); //displayWidth, displayHeight
   displayOrientation();
   //
   //Population
@@ -75,6 +68,12 @@ void draw()
   rect(ptX10, ptY10, rectWidth, rectHeight);
   rect(ptX11, ptY11, rectWidth, rectHeight);
   //
+  
+
+//
+
+  
+
   //Starting pts for rect() must be 1-9 & filled black
   fill(black);
   ellipse(ptX1, ptY1, ptDiameter, ptDiameter);
@@ -101,12 +100,12 @@ void draw()
   //
 }//End draw
 void keyPressed() {
-  //Splash Screen SPACE Bar
-  if ( OS_On==true && key==' ' ) {
-    splashScreenStart = true;
+  //Splash Screen SPACE Bar{if ( OS_On==true && key==('L ' || key=='l') 
+    splashScreenStart =false;
     backgroundImage();
-  }//End Splash Screen SPACE Bar
-  //
+  //End Splash Screen SPACE Bar
+  //}
+  
   //Key Board Short Cuts
   if ( splashScreenStart==true ) {//Home Screen Only Variables
     if ( key==CODED || keyCode==ESC ) exit();
